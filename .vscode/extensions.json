@@ -5,6 +5,7 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "stylelint.vscode-stylelint",
-    "obkoro1.korofileheader"
+    "obkoro1.korofileheader",
+    "editorconfig.editorconfig"
   ]
 }
