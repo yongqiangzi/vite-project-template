@@ -3,8 +3,8 @@
   "stylelint.validate": ["css", "less", "postcss", "scss", "vue", "sass"],
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "eslint.autoFixOnSave": true
+    "source.fixAll": "explicit",
+    "eslint.autoFixOnSave": "explicit"
   },
   "css.lint.unknownAtRules": "ignore",
   "scss.lint.unknownAtRules": "ignore",
@@ -45,5 +45,10 @@
     "Date": "Do not edit",
     "LastEditTime": "Do not edit",
     "FilePath": "no item name"
+  },
+  "[javascript][typescript][typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
   }
 }
