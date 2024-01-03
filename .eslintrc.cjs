@@ -1,8 +1,17 @@
+/*
+ * @Date: 2024-01-03 11:08:34
+ * @LastEditTime: 2024-01-03 19:22:05
+ * @FilePath: \.eslintrc.cjs
+ */
 /* eslint-env node */
 require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
   root: true,
+  env: {
+    node: true,
+    'vue/setup-compiler-macros': true,
+  },
   extends: [
     'airbnb-base',
     'plugin:vue/vue3-essential',
