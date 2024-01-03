@@ -1,6 +1,6 @@
 /*
  * @Date: 2024-01-03 11:08:34
- * @LastEditTime: 2024-01-03 19:12:14
+ * @LastEditTime: 2024-01-03 20:00:47
  * @FilePath: \vite.config.ts
  */
 import { fileURLToPath, URL } from 'node:url';
@@ -28,6 +28,7 @@ export default ({ mode }: any) => {
             importStyle: false,
           }),
         ],
+        dts: false,
       }),
       createHtmlPlugin({
         inject: {
