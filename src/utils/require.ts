@@ -2,16 +2,17 @@
  * @Author: wanglei
  * @Date: 2023-12-24 10:40:59
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2024-01-03 20:07:39
+ * @LastEditTime: 2024-01-04 13:14:48
  * @FilePath: \src\utils\require.ts
  * @Descripttion: 代替webpack版require
+ * 使用示例require('images/xxx.png')，就可以动态引入图片
  */
 const require = (imgPath: any) => {
   try {
-    const handlePath = imgPath.replace('@', '..');
-    // https://vitejs.cn/guide/assets.html#the-public-directory
-    return new URL(handlePath, import.meta.url).href;
+    // https://cn.vitejs.dev/guide/assets.html#new-url-url-import-meta-url
+    return new URL(`../assets/${imgPath}`, import.meta.url).href;
   } catch (error) {
+    console.warn(error);
     return false;
   }
 };
