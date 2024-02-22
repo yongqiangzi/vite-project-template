@@ -34,18 +34,21 @@ const getStringDate = (date = new Date()) => {
 };
 
 const main = () => {
-  const config = path.resolve('./src/configs/index.ts');
+  const config = path.resolve('./build/index.html');
 
-  console.log('main config file', config);
+  console.log('build index file', config);
 
   // 修改src目录下configs配置文件
   if (fs.existsSync(config)) {
     let content = fs.readFileSync(config).toString();
     const { timeString } = getStringDate() || {};
+    const insertStr = `<script>console.warn('【version ${packageJson.version}】build by ${timeString}');</script>`;
+    const index = content.indexOf('</body>');
+    const part1 = content.slice(0, index);
+    const part2 = content.slice(index);
+    const updatedContent = `${part1}${insertStr}${part2}`;
 
-    content += `\nconsole.warn(\`【version ${packageJson.version}】build by ${timeString}\`);\n`;
-
-    fs.writeFileSync(config, content);
+    fs.writeFileSync(config, updatedContent);
   } else {
     console.log('no config files found');
   }
