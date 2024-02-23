@@ -1,7 +1,7 @@
 /*
  * @Date: 2024-01-03 11:08:34
- * @LastEditTime: 2024-01-03 20:00:47
- * @FilePath: \vite.config.ts
+ * @LastEditTime: 2024-02-23 16:40:21
+ * @FilePath: /vite.config.ts
  */
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig, loadEnv } from 'vite';
@@ -26,6 +26,7 @@ export default ({ mode }: any) => {
         resolvers: [
           AntDesignVueResolver({
             importStyle: false,
+            resolveIcons: true,
           }),
         ],
         dts: false,
