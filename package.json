@@ -5,7 +5,7 @@
   "scripts": {
     "start": "vite",
     "build:prod": "pnpm run type-check && rimraf build && vite build --mode production && node script/updateVersion.js",
-    "build:dev": "pnpm run type-check && rimraf build && vite build --mode test && node script/updateVersion.js",
+    "build:dev": "pnpm run type-check && rimraf build && vite build --mode development && node script/updateVersion.js",
     "preview": "vite preview",
     "preview:build": "pnpm build:prod && vite preview",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
